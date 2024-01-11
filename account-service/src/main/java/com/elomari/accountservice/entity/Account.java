@@ -16,7 +16,7 @@ public class Account {
     private LocalDate createdAt;
     private String currency;
     @Enumerated(EnumType.STRING)
-    private AccountType Type;
+    private AccountType type;
     @Transient
     private Customer customer;
     private Long customerId;
