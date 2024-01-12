@@ -1,15 +1,20 @@
 package com.elomari.customerservice;
 
+import com.elomari.customerservice.config.GlobalConfig;
 import com.elomari.customerservice.entity.Customer;
 import com.elomari.customerservice.repository.CustomerRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 
 import java.util.List;
 
 @SpringBootApplication
+@EnableConfigurationProperties({GlobalConfig.class})
 public class CustomerServiceApplication {
 
     public static void main(String[] args) {
