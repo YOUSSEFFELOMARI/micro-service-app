@@ -18,7 +18,7 @@ public interface CustomerRestClient {
     @CircuitBreaker(name = "customerService",fallbackMethod = "getDefaultAllCustomer")
     List<Customer> allCustomers();
 
-    //fallbackMethod = "getDefaultCustomer" transmet un exception a cet method
+    //fallbackMethod = "getDefaultCustomer" transmit un exception a cet method
     default Customer getDefaultCustomer(Long id, Exception exception){
         return Customer.builder()
                 .id(id)

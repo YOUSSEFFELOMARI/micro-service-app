@@ -1,0 +1,33 @@
+<div class="p-3">
+  <div class="card">
+    <div class="card-body">
+      @if (accounts != undefined) {
+        <table class="table">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name & LastName</th>
+            <th>balance</th>
+            <th>Type</th>
+            <th>Date of creation</th>
+          </tr>
+          </thead>
+          <tbody>
+            @for (acc of accounts; track accounts.id) {
+              <tr>
+                <td>{{ acc.accountId }}</td>
+                <td>{{ acc.customer.name}} {{acc.customer.lastName}}</td>
+                <td>{{ acc.balance}} {{ acc.currency }}</td>
+                <td>{{ acc.type}}</td>
+                <td>{{ acc.createdAt}}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      } @else {
+        <p>No customer is Here</p>
+      }
+    </div>
+  </div>
+
+</div>
